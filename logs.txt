@@ -1,0 +1,31 @@
+git reflog
+fb1c5f4 (HEAD -> main, origin/main) HEAD@{0}: checkout: moving from bug2 to main
+b2860b2 (origin/bug2, bug2) HEAD@{1}: rebase (finish): returning to refs/heads/bug2
+b2860b2 (origin/bug2, bug2) HEAD@{2}: rebase (pick): Fix wrong condition in makeBigStringFrom
+fb1c5f4 (HEAD -> main, origin/main) HEAD@{3}: rebase (start): checkout origin/main
+ac24279 HEAD@{4}: checkout: moving from main to bug2
+fb1c5f4 (HEAD -> main, origin/main) HEAD@{5}: reset: moving to origin/main
+6220062 HEAD@{6}: checkout: moving from bug2 to main
+ac24279 HEAD@{7}: reset: moving to HEAD~1
+8a23b53 HEAD@{8}: checkout: moving from bug2 to bug2
+8a23b53 HEAD@{9}: commit: Call method makeBigStringFrom in main class
+ac24279 HEAD@{10}: reset: moving to HEAD~1
+42f1c6f HEAD@{11}: checkout: moving from bug1 to bug2
+574e4fe (origin/bug1, bug1) HEAD@{12}: checkout: moving from bug2 to bug1
+42f1c6f HEAD@{13}: checkout: moving from bug1 to bug2
+574e4fe (origin/bug1, bug1) HEAD@{14}: checkout: moving from bug2 to bug1
+42f1c6f HEAD@{15}: commit: Call method makeBigStringFrom in main class
+ac24279 HEAD@{16}: checkout: moving from bug1 to bug2
+574e4fe (origin/bug1, bug1) HEAD@{17}: commit: Call method filterOddLengthStrings in main class
+0a78691 HEAD@{18}: checkout: moving from bug2 to bug1
+ac24279 HEAD@{19}: commit: Fix wrong condition in makeBigStringFrom
+6220062 HEAD@{20}: checkout: moving from bug1 to bug2
+0a78691 HEAD@{21}: commit: Fix wrong condition in filterOddLengthStrings
+6220062 HEAD@{22}: checkout: moving from bug1 to bug1
+6220062 HEAD@{23}: checkout: moving from main to bug1
+6220062 HEAD@{24}: checkout: moving from bug2 to main
+6220062 HEAD@{25}: checkout: moving from main to bug2
+6220062 HEAD@{26}: checkout: moving from bug1 to main
+6220062 HEAD@{27}: checkout: moving from main to bug1
+6220062 HEAD@{28}: commit: Add starter code
+ebc4177 HEAD@{29}: commit (initial): Initial commit

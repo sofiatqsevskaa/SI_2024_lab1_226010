@@ -1,0 +1,185 @@
+git clone https://github.com/sofiatqsevskaa/SI_2024_lab1_226010.git
+- Ја клонирам remote репозиторијата во локален фолдер.
+
+cd SI_2024_lab1_226010/
+
+touch README.md
+
+-Ажурирам README.me
+
+git add .
+
+- По ажурирање на README.md, го ставам во staged и потоа commit.
+
+git commit -m "Initial commit"
+
+	[main (root-commit) ebc4177] Initial commit
+	1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+- Потоа:
+git push origin main
+git push origin main
+
+	Enumerating objects: 5, done.
+	Counting objects: 100% (5/5), done.
+	Writing objects: 100% (3/3), 271 bytes | 271.00 KiB/s, done.
+	Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	To https://github.com/sofiatqsevskaa/SI_2024_lab1_226010.git
+	88a8e15..7688e9b  main -> main
+
+-По внесување на јава класите ги ставам и тие фајлови во staged
+git add .
+git commit -m "Add starter code"
+	
+	[main 6220062] Add starter code
+	3 files changed, 52 insertions(+)
+	create mode 100644 SILab1Main.java
+	create mode 100644 SILab1_1.java
+	create mode 100644 SILab1_2.java
+
+git push origin main 
+
+	Enumerating objects: 6, done.
+	Counting objects: 100% (6/6), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (5/5), done.
+	Writing objects: 100% (5/5), 1007 bytes | 1007.00 KiB/s, done.
+	Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+	To https://github.com/sofiatqsevskaa/SI_2024_lab1_226010.git
+	ebc4177..6220062  main -> main
+
+
+git checkout -b bug1
+
+	Switched to a new branch 'bug1'
+
+git checkout main
+
+	Switched to branch 'main'
+	Your branch is up to date with 'origin/main'.
+
+git checkout -b bug2
+
+	Switched to a new branch 'bug2'
+
+
+git checkout bug1
+
+git branch
+	* bug1
+	  bug2
+	  main
+
+- Ја поправам грешката во кодот 
+
+git add SILab1_1.java 
+
+git commit -m "Fix wrong condition in filterOddLengthStrings"
+	[bug1 0a78691] Fix wrong condition in filterOddLengthStrings
+	1 file changed, 1 insertion(+), 1 deletion(-)
+
+git checkout bug2
+
+- Ја поправам грешката во кодот
+
+git add SILab1_2.java 
+
+git commit -m "Fix wrong condition in makeBigStringFrom"
+	[bug2 ac24279] Fix wrong condition in makeBigStringFrom
+	1 file changed, 1 insertion(+), 1 deletion(-)
+
+git checkout bug1
+
+- Додавам принт во Main класата
+
+git add SILab1Main.java 
+
+git commit -m "Call method filterOddLengthStrings in main class"
+	[bug1 574e4fe] Call method filterOddLengthStrings in main class
+	 1 file changed, 1 insertion(+)
+
+git checkout bug2
+
+- Додавам принт во Main класата
+
+git add SILab1Main.java 
+
+git commit -m "Call method makeBigStringFrom in main class"
+	[bug2 42f1c6f] Call method makeBigStringFrom in main class
+	1 file changed, 1 insertion(+)
+
+git push origin bug1 bug2
+	Enumerating objects: 16, done.
+	Counting objects: 100% (16/16), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (12/12), done.
+	Writing objects: 100% (12/12), 1.25 KiB | 1.25 MiB/s, done.
+	Total 12 (delta 8), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (8/8), completed with 4 local objects.
+	To https://github.com/sofiatqsevskaa/SI_2024_lab1_226010.git
+	 * [new branch]      bug1 -> bug1
+	 * [new branch]      bug2 -> bug2
+
+- По merge на main со bug1 немаше конфликти. Но, кај bug2:
+
+This branch has conflicts that must be resolved
+Use the web editor or the  to resolve conflicts.
+
+
+git reset --hard origin/main 
+	HEAD is now at fb1c5f4 Merge pull request #1 from sofiatqsevskaa/bug1
+
+git push -f origin bug2
+	Enumerating objects: 5, done.
+	Counting objects: 100% (5/5), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 324 bytes | 324.00 KiB/s, done.
+	Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+	To https://github.com/sofiatqsevskaa/SI_2024_lab1_226010.git
+	 + 8a23b53...b2860b2 bug2 -> bug2 (forced update)
+
+git reflog
+fb1c5f4 (HEAD -> main, origin/main) HEAD@{0}: checkout: moving from bug2 to main
+b2860b2 (origin/bug2, bug2) HEAD@{1}: rebase (finish): returning to refs/heads/bug2
+b2860b2 (origin/bug2, bug2) HEAD@{2}: rebase (pick): Fix wrong condition in makeBigStringFrom
+fb1c5f4 (HEAD -> main, origin/main) HEAD@{3}: rebase (start): checkout origin/main
+ac24279 HEAD@{4}: checkout: moving from main to bug2
+fb1c5f4 (HEAD -> main, origin/main) HEAD@{5}: reset: moving to origin/main
+6220062 HEAD@{6}: checkout: moving from bug2 to main
+ac24279 HEAD@{7}: reset: moving to HEAD~1
+8a23b53 HEAD@{8}: checkout: moving from bug2 to bug2
+8a23b53 HEAD@{9}: commit: Call method makeBigStringFrom in main class
+ac24279 HEAD@{10}: reset: moving to HEAD~1
+42f1c6f HEAD@{11}: checkout: moving from bug1 to bug2
+574e4fe (origin/bug1, bug1) HEAD@{12}: checkout: moving from bug2 to bug1
+42f1c6f HEAD@{13}: checkout: moving from bug1 to bug2
+574e4fe (origin/bug1, bug1) HEAD@{14}: checkout: moving from bug2 to bug1
+42f1c6f HEAD@{15}: commit: Call method makeBigStringFrom in main class
+ac24279 HEAD@{16}: checkout: moving from bug1 to bug2
+574e4fe (origin/bug1, bug1) HEAD@{17}: commit: Call method filterOddLengthStrings in main class
+0a78691 HEAD@{18}: checkout: moving from bug2 to bug1
+ac24279 HEAD@{19}: commit: Fix wrong condition in makeBigStringFrom
+6220062 HEAD@{20}: checkout: moving from bug1 to bug2
+0a78691 HEAD@{21}: commit: Fix wrong condition in filterOddLengthStrings
+6220062 HEAD@{22}: checkout: moving from bug1 to bug1
+6220062 HEAD@{23}: checkout: moving from main to bug1
+6220062 HEAD@{24}: checkout: moving from bug2 to main
+6220062 HEAD@{25}: checkout: moving from main to bug2
+6220062 HEAD@{26}: checkout: moving from bug1 to main
+6220062 HEAD@{27}: checkout: moving from main to bug1
+6220062 HEAD@{28}: commit: Add starter code
+ebc4177 HEAD@{29}: commit (initial): Initial commit
+
+
+git pull --rebase
+
+touch logs.txt
+
+git add logs.txt 
+
+git commit -m "Added logs.txt" 
+
+git push origin main
